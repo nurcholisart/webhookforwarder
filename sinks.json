@@ -1,6 +1,10 @@
 [
     {
-        "id": "sdk-rest",
-        "url": "https://gotest.free.beeceptor.com"
+        "id": "sdkrest",
+        "url": "https://sdkwebhook.free.beeceptor.com/rest"
+    },
+    {
+        "id": "sdkclient",
+        "url": "https://sdkwebhook.free.beeceptor.com/client"
     }
 ]
