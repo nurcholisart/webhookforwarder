@@ -2,6 +2,9 @@ module webhook-forwarder
 
 go 1.15
 
+// https://github.com/heroku/heroku-buildpack-go/issues/301#issuecomment-471032174
+// +heroku goVersion go1.15
+
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/labstack/echo/v4 v4.3.0
