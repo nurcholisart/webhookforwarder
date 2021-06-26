@@ -68,7 +68,8 @@ func main() {
 		return c.String(http.StatusOK, "ok")
 	})
 
-	e.Logger.Fatal(e.Start(":8000"))
+	port := getEnv("PORT", "8000")
+	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", port)))
 }
 
 func makeHttpRequest(url string, jsonBody map[string]interface{}) {
@@ -82,4 +83,11 @@ func makeHttpRequest(url string, jsonBody map[string]interface{}) {
 
 	http.Post(url, "application/json", bytes.NewBuffer(jsonBodyStr))
 	return
+}
+
+func getEnv(key, fallback string) string {
+	if value, ok := os.LookupEnv(key); ok {
+		return value
+	}
+	return fallback
 }
